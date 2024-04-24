@@ -30,6 +30,10 @@ opt.pumheight = 10        -- Makes popup menu smaller
 opt.ignorecase = true
 opt.smartcase = true
 
+-- Disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Enable auto format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
     buffer = buffer,
