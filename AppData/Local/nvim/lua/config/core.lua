@@ -34,6 +34,14 @@ opt.smartcase = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- Enable error format parsing for msvc and cl.exe:
+-- MSBuild:
+vim.opt.errorformat:append([[\ %#%f(%l\,%c):\ %m]])
+-- cl.exe:
+vim.opt.errorformat:append([[\ %#%f(%l)\ :\ %#%t%[A-z]%#\ %m]])
+-- clang / gcc
+vim.opt.errorformat:append([[%E%f:%l:%c:\ %trror:\ %m,%-Z%p^,%+C%.%#]])
+
 -- Enable auto format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
     buffer = buffer,
