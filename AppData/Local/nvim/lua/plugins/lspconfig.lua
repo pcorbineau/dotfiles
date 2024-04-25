@@ -11,7 +11,9 @@ return {
 
         -- Setup language servers
         -- Cpp
-        lspconfig.clangd.setup({})
+        lspconfig.clangd.setup({
+            capabilities = { offsetEncoding = { "utf-16" } },
+        })
         -- CMake
         lspconfig.neocmake.setup({})
         -- Lua
