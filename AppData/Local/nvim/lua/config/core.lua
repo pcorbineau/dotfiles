@@ -30,6 +30,8 @@ opt.pumheight = 10        -- Makes popup menu smaller
 opt.ignorecase = true
 opt.smartcase = true
 
+opt.conceallevel = 2
+
 -- Disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
