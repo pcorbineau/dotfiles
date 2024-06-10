@@ -20,6 +20,11 @@ return {
         lspconfig.lua_ls.setup({})
         lspconfig.pyright.setup({})
 
+        -- Rust
+        lspconfig.rust_analyzer.setup({
+            capabilities = { offsetEncoding = { "utf-16" } },
+        })
+
         -- Global mappings.
         -- See `:help vim.diagnostic.*` for documentation on any of the below functions
         vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)

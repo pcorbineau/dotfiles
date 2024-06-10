@@ -5,8 +5,10 @@ return {
         "nvim-telescope/telescope.nvim",
         "nvim-lua/plenary.nvim"
     },
+    keys = {
+        { "<leader>gg", "<CMD>LazyGit<CR>", desc = "LazyGit" },
+    },
     config = function()
         require("telescope").load_extension("lazygit")
-        vim.keymap.set("n", "<leader>gg", "<CMD>LazyGit<CR>", { noremap = true, silent = true })
     end
 }
