@@ -1,11 +1,13 @@
-local tokyonight = {
-    "folke/tokyonight.nvim",
+local catppuccin = {
+    "catppuccin/nvim",
     lazy = false,
-    name = "tokyonight",
+    name = "catppuccin",
     priority = 1000,
     init = function()
-        vim.cmd.colorscheme "tokyonight-night"
+        vim.cmd.colorscheme "catppuccin-mocha"
+
+        vim.cmd.hi "Comment gui=none"
     end
 }
 
-return tokyonight
+return catppuccin
