@@ -6,7 +6,7 @@ return {
         "folke/noice.nvim",
     },
     opts = function()
-        local sections = require("plugins.config.lualine").sections
+        local sections = require("plugins.config.lualine_sections").sections
         return {
             options = {
                 component_separators = '│',

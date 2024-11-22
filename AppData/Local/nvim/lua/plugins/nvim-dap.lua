@@ -1,5 +1,3 @@
-local dapconfig = require("plugins.config.dap")
-
 return {
     "rcarriga/nvim-dap-ui",
     dependencies = {
@@ -8,12 +6,10 @@ return {
         "jay-babu/mason-nvim-dap.nvim",
     },
 
-    keys = dapconfig.keys,
+    keys = require("plugins.config.dap_keys").keys,
     config = function()
         local dap = require("dap")
-        local dapui_keys = dapconfig.keys
-        -- allow multiple threads to be stopped
-        -- dap.defaults.fallback.auto_continue_if_many_stopped = false
+        local dapconfig = require("plugins.config.dap_keys")
 
         local dapui = require("dapui")
         dapui.setup({

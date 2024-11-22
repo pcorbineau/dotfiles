@@ -8,7 +8,7 @@ return {
     },
     keys = function()
         local neotest = require("neotest")
-        local config = require("plugins.config.neotest")
+        local config = require("plugins.config.neotest_save_and_run")
 
         return {
             { "<leader>ts", function() neotest.summary.toggle() end,                                                    desc = "[Test] Summary toggle" },

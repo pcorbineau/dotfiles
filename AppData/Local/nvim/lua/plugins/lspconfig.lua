@@ -9,6 +9,7 @@ return {
                     "lua_ls",
                     "clangd",
                     "jsonls",
+                    "yamlls",
                 },
                 automatic_installation = true,
                 handlers = {
