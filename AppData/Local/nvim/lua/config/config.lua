@@ -21,14 +21,3 @@ opt.pumheight = 10 -- Makes popup menu smaller
 -- ignore case when searching
 opt.ignorecase = true -- all searches will be case insensitive
 opt.smartcase = true  -- search will be case sensitive if it contains an uppercase letter
-
--- General Settings
-local general = vim.api.nvim_create_augroup("General", { clear = true })
-
--- disable auto comment on newline
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "*",
-    command = "set formatoptions-=cro",
-    group = general,
-    desc = "Disable new line comment",
-})
