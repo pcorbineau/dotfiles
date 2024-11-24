@@ -10,6 +10,7 @@ return {
                     "clangd",
                     "jsonls",
                     "yamlls",
+                    "cmake",
                 },
                 automatic_installation = true,
                 handlers = {

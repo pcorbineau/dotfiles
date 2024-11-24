@@ -24,6 +24,18 @@ return {
                     },
                 },
             },
+            pickers = {
+                help_tags = { -- open help tags as a vertical split by default
+                    mappings = {
+                        i = {
+                            ["<CR>"] = "select_vertical",
+                        },
+                        n = {
+                            ["<CR>"] = "select_vertical",
+                        },
+                    },
+                },
+            },
         }
     end,
 }

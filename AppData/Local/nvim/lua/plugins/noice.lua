@@ -18,6 +18,10 @@ return {
         notify = {
             enabled = false,
         },
+        lsp = {
+            hover = { enabled = false },
+            signature = { enabled = false },
+        },
         routes = {
             {
                 filter = {

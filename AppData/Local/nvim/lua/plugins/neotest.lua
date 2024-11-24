@@ -59,7 +59,38 @@ return {
             },
             adapters = {
                 -- Load with default config
-                require("neotest-ctest").setup({})
+                require("neotest-ctest").setup({
+                    is_test_file = function(file_path)
+                        if string.find(file_path, "tests") then
+                            local name, extension = unpack(vim.split(file_path, ".", { plain = true }))
+                            local supported_extensions = { "cpp", "cc", "cxx" }
+                            return vim.tbl_contains(supported_extensions, extension)
+                        else
+                            return false
+                        end
+                    end,
+                    filter_dir = function(name, rel_path, root)
+                        local neotest_config = require("neotest.config")
+                        local fn = vim.tbl_get(neotest_config, "projects", root, "discovery", "filter_dir")
+                        if fn ~= nil then
+                            return fn(name, rel_path, root)
+                        end
+
+                        local dir_filters = {
+                            ["build"] = false,
+                            ["cmake"] = false,
+                            ["doc"] = false,
+                            ["docs"] = false,
+                            ["examples"] = false,
+                            ["out"] = false,
+                            ["scripts"] = false,
+                            ["tools"] = false,
+                            ["venv"] = false,
+                            ["deps"] = false,
+                        }
+                        return dir_filters[name] == nil
+                    end,
+                })
             }
         })
     end
