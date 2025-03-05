@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <VGpu>Enable</VGpu>
+  <Networking>Enable</Networking>
+  <MemoryInMB>8192</MemoryInMB>
+  <MappedFolders>
+    <MappedFolder>
+      <HostFolder>D:\devenv\dotfiles</HostFolder>
+      <SandboxFolder>C:\scripts</SandboxFolder>
+      <ReadOnly>true</ReadOnly>
+    </MappedFolder>
+  </MappedFolders>
+  <LogonCommand>
+  <Command>powershell -executionpolicy unrestricted -command "start powershell {-noexit -file C:\scripts\setup.ps1}"</Command>
+  </LogonCommand>
+</Configuration>
