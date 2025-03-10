@@ -1,0 +1,5 @@
+{{ if eq .chezmoi.os "windows" -}}
+mklink /D "%LOCALAPPDATA%\nvim" "%USERPROFILE%\.local\share\chezmoi\private_dot_nvim"
+{{- else -}}
+ln -s ~/.local/share/chezmoi/private_dot_nvim ~/.config/nvim
+{{- end }}
