@@ -9,6 +9,7 @@ in
   ];
 
   hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
   services.pipewire = {
     enable = true;
     pulse.enable = true;
